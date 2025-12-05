@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="quote-container">
+    <blockquote class="quote">
+        "{{ quote }}"
+    </blockquote>
+    <button onclick="location.reload()">Обновить цитату</button>
+</div>
+{% endblock %}

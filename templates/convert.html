@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Конвертер температур</h1>
+<form method="GET">
+    <input type="number" name="value" value="{{ value }}" placeholder="Температура" step="any" required>
+    <select name="direction">
+        {% if direction == 'c_to_f' %}
+            <option value="c_to_f" selected>°C → °F</option>
+        {% else %}
+            <option value="c_to_f">°C → °F</option>
+        {% endif %}
+
+        {% if direction == 'f_to_c' %}
+            <option value="f_to_c" selected>°F → °C</option>
+        {% else %}
+            <option value="f_to_c">°F → °C</option>
+        {% endif %}
+    </select>
+    <button type="submit">Конвертировать</button>
+</form>
+
+{% if error %}
+<div class="error">{{ error }}</div>
+{% endif %}
+{% if result %}
+<div class="result">{{ result }}</div>
+{% endif %}
+{% endblock %}

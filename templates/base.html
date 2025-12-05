@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Задания</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('quote') }}">📜 Цитата</a>
+        <a href="{{ url_for('gallery') }}">🖼️ Галерея</a>
+        <a href="{{ url_for('movies') }}">🎬 Фильмы</a>
+        <a href="{{ url_for('calc') }}">🔢 Калькулятор</a>
+        <a href="{{ url_for('convert') }}">🌡️ Конвертер</a>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

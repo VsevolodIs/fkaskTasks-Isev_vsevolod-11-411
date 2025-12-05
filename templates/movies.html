@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Каталог фильмов</h1>
+<div class="movies-grid">
+    {% for movie in movies %}
+    <div class="movie-card">
+        <h3>{{ movie.title }}</h3>
+        <p><strong>Год:</strong> {{ movie.year }}</p>
+        <p><strong>Рейтинг:</strong> {{ "%.1f"|format(movie.rating) }}/10</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
